@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace LatihanGithub
 {
-    public partial class Form1 : Form
+    public partial class FormSiswa : Form
     {
-        public Form1()
+        public FormSiswa()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
