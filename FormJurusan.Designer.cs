@@ -32,7 +32,7 @@
             this.txbJurusan = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnSimpan = new System.Windows.Forms.Button();
-            this.btnNay = new System.Windows.Forms.Button();
+            this.btnBatal = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txbKodeJurusan
@@ -66,24 +66,24 @@
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(75, 23);
             this.btnSimpan.TabIndex = 3;
-            this.btnSimpan.Text = "Yay";
+            this.btnSimpan.Text = "Simpan";
             this.btnSimpan.UseVisualStyleBackColor = true;
             // 
-            // btnNay
+            // btnBatal
             // 
-            this.btnNay.Location = new System.Drawing.Point(42, 145);
-            this.btnNay.Name = "btnNay";
-            this.btnNay.Size = new System.Drawing.Size(75, 23);
-            this.btnNay.TabIndex = 4;
-            this.btnNay.Text = "Nay";
-            this.btnNay.UseVisualStyleBackColor = true;
+            this.btnBatal.Location = new System.Drawing.Point(42, 145);
+            this.btnBatal.Name = "btnBatal";
+            this.btnBatal.Size = new System.Drawing.Size(75, 23);
+            this.btnBatal.TabIndex = 4;
+            this.btnBatal.Text = "Batal";
+            this.btnBatal.UseVisualStyleBackColor = true;
             // 
             // FormJurusan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(662, 332);
-            this.Controls.Add(this.btnNay);
+            this.Controls.Add(this.btnBatal);
             this.Controls.Add(this.btnSimpan);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txbJurusan);
@@ -102,6 +102,6 @@
         private System.Windows.Forms.TextBox txbJurusan;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSimpan;
-        private System.Windows.Forms.Button btnNay;
+        private System.Windows.Forms.Button btnBatal;
     }
 }
