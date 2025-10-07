@@ -37,16 +37,17 @@
             // 
             // TBuser
             // 
-            this.TBuser.Location = new System.Drawing.Point(181, 91);
+            this.TBuser.Location = new System.Drawing.Point(121, 108);
             this.TBuser.Name = "TBuser";
-            this.TBuser.Size = new System.Drawing.Size(100, 20);
+            this.TBuser.Size = new System.Drawing.Size(159, 20);
             this.TBuser.TabIndex = 0;
+            this.TBuser.TextChanged += new System.EventHandler(this.TBuser_TextChanged);
             // 
             // TBPassword
             // 
-            this.TBPassword.Location = new System.Drawing.Point(113, 162);
+            this.TBPassword.Location = new System.Drawing.Point(119, 162);
             this.TBPassword.Name = "TBPassword";
-            this.TBPassword.Size = new System.Drawing.Size(100, 20);
+            this.TBPassword.Size = new System.Drawing.Size(161, 20);
             this.TBPassword.TabIndex = 1;
             // 
             // label2
@@ -61,7 +62,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(259, 24);
+            this.label3.Location = new System.Drawing.Point(247, 35);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(33, 13);
             this.label3.TabIndex = 4;
@@ -70,7 +71,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 91);
+            this.label1.Location = new System.Drawing.Point(60, 111);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 2;
