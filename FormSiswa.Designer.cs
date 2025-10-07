@@ -37,7 +37,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Name = "FormSiswa";
             this.Text = "FormSiswa";
-            this.Load += new System.EventHandler(this.FormSiswa_Load);
             this.ResumeLayout(false);
 
         }
