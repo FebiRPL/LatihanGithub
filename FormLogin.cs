@@ -26,5 +26,10 @@ namespace LatihanGithub
         {
 
         }
+
+        private void TBuser_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
