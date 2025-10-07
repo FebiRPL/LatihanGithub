@@ -28,44 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblJurusan = new System.Windows.Forms.Label();
-            this.cmbJurusan = new System.Windows.Forms.ComboBox();
+            this.txbKodeJurusan = new System.Windows.Forms.TextBox();
+            this.txbJurusan = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnSimpan = new System.Windows.Forms.Button();
+            this.btnNay = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // lblJurusan
+            // txbKodeJurusan
             // 
-            this.lblJurusan.AutoSize = true;
-            this.lblJurusan.Location = new System.Drawing.Point(29, 25);
-            this.lblJurusan.Name = "lblJurusan";
-            this.lblJurusan.Size = new System.Drawing.Size(81, 13);
-            this.lblJurusan.TabIndex = 0;
-            this.lblJurusan.Text = "Nama Jurusan :";
-            this.lblJurusan.Click += new System.EventHandler(this.label1_Click);
+            this.txbKodeJurusan.Location = new System.Drawing.Point(42, 49);
+            this.txbKodeJurusan.Name = "txbKodeJurusan";
+            this.txbKodeJurusan.Size = new System.Drawing.Size(100, 20);
+            this.txbKodeJurusan.TabIndex = 0;
+            this.txbKodeJurusan.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // cmbJurusan
+            // txbJurusan
             // 
-            this.cmbJurusan.FormattingEnabled = true;
-            this.cmbJurusan.Items.AddRange(new object[] {
-            "Rekayasa Perangkat Lunak",
-            "TKKR",
-            "Kimia",
-            "ULW",
-            "Hotel",
-            "Akutansi"});
-            this.cmbJurusan.Location = new System.Drawing.Point(116, 25);
-            this.cmbJurusan.Name = "cmbJurusan";
-            this.cmbJurusan.Size = new System.Drawing.Size(121, 21);
-            this.cmbJurusan.TabIndex = 1;
+            this.txbJurusan.Location = new System.Drawing.Point(187, 49);
+            this.txbJurusan.Name = "txbJurusan";
+            this.txbJurusan.Size = new System.Drawing.Size(199, 20);
+            this.txbJurusan.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(161, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(10, 13);
+            this.label1.TabIndex = 2;
+            this.label1.Text = ":";
+            this.label1.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // btnSimpan
+            // 
+            this.btnSimpan.Location = new System.Drawing.Point(42, 116);
+            this.btnSimpan.Name = "btnSimpan";
+            this.btnSimpan.Size = new System.Drawing.Size(75, 23);
+            this.btnSimpan.TabIndex = 3;
+            this.btnSimpan.Text = "Yay";
+            this.btnSimpan.UseVisualStyleBackColor = true;
+            // 
+            // btnNay
+            // 
+            this.btnNay.Location = new System.Drawing.Point(42, 145);
+            this.btnNay.Name = "btnNay";
+            this.btnNay.Size = new System.Drawing.Size(75, 23);
+            this.btnNay.TabIndex = 4;
+            this.btnNay.Text = "Nay";
+            this.btnNay.UseVisualStyleBackColor = true;
             // 
             // FormJurusan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(662, 332);
-            this.Controls.Add(this.cmbJurusan);
-            this.Controls.Add(this.lblJurusan);
+            this.Controls.Add(this.btnNay);
+            this.Controls.Add(this.btnSimpan);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txbJurusan);
+            this.Controls.Add(this.txbKodeJurusan);
             this.Name = "FormJurusan";
             this.Text = "FormJurusan";
+            this.Load += new System.EventHandler(this.FormJurusan_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -73,7 +98,10 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblJurusan;
-        private System.Windows.Forms.ComboBox cmbJurusan;
+        private System.Windows.Forms.TextBox txbKodeJurusan;
+        private System.Windows.Forms.TextBox txbJurusan;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnSimpan;
+        private System.Windows.Forms.Button btnNay;
     }
 }
