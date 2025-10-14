@@ -1,7 +1,5 @@
-# LatihanGithub
-# Nama Kelompok : 
-# Febianur
-# M. Fahru R.
-# M. Alfian
-# Raendra Bastian P.
-
+# Nama Kelompok 2 : 
+# Febianur = Form Login
+# M. Fahru R. = Form Siswa
+# M. Alfian = Form Menu
+# Raendra Bastian P. = Form Jurusan
