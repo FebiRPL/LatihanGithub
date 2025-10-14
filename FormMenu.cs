@@ -32,5 +32,10 @@ namespace LatihanGithub
             f.ShowDialog();
             this.Hide();
         }
+
+        private void FormMenu_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
