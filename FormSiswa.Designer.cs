@@ -168,6 +168,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FormSiswa";
             this.Text = "FormSiswa";
+            this.Load += new System.EventHandler(this.FormSiswa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
