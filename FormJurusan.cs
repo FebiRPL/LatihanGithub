@@ -8,15 +8,78 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace LatihanGithub
 {
     public partial class FormJurusan : Form
     {
+
+        string koneksiString = "server=localhost;database=db_latihangtihub_form;uid=root;pwd=;";
+        MySqlConnection koneksi;
+
         public FormJurusan()
         {
             InitializeComponent();
         }
+
+        private void clear()
+        {
+            txbKodeJurusan.Clear();
+            txbJurusan.Focus();
+           
+
+        }
+
+        private void TampilData()
+        {
+            try
+            {
+                koneksi = new MySqlConnection(koneksiString);
+                koneksi.Open();
+
+                string query = "SELECT * FROM anggota";
+                MySqlDataAdapter adapter = new MySqlDataAdapter(query, koneksi);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+
+                dgvJurusan.DataSource = dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error:" + ex.Message);
+            }
+            finally
+            {
+                if (koneksi != null)
+                    koneksi.Close();
+            }
+        }
+
+        private void refreshData()
+        {
+            MySqlConnection conn = new MySqlConnection("server=localhost;database=db_latihangtihub_form;uid=root;pwd=;");
+            try
+            {
+                conn.Open();
+                string query = "SELECT * FROM jurusan";
+                MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                dgvJurusan.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal" + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -40,27 +103,34 @@ namespace LatihanGithub
 
         private void btnSimpan_Click(object sender, EventArgs e)
         {
-            DialogResult hasil = MessageBox.Show("yakin ingin menyimpan data?",
-             "Konfirmasi", MessageBoxButtons.YesNo);
+            try
+            {
+                koneksi = new MySqlConnection(koneksiString);
+                koneksi.Open();
 
-            if (hasil == DialogResult.Yes)
-            {
-                string[] datainput =
-           {
-                txbKodeJurusan.Text,
-                txbKodeJurusan.Text,
+                string query = "INSERT INTO jurusan (Id_Jurusan, Jurusan)" +
+                    "VALUES (@id,  @jurusan)";
+
+                MySqlCommand cmd = new MySqlCommand(query, koneksi);
+                cmd.Parameters.AddWithValue("@id", txbKodeJurusan.Text);
+                cmd.Parameters.AddWithValue("@nama", txbJurusan.Text);
                
-            };
-                dgvJurusan.Rows.Add(datainput);
-                MessageBox.Show("Simpan berhasil");
-                txbKodeJurusan.Clear();
-                txbJurusan.Clear();
-              
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Data berhasil disimpan!", "Informasi");
+                clear();
+                TampilData();// refresh data di DataGridView
             }
-            if (hasil == DialogResult.No)
+            catch (Exception ex)
             {
-                MessageBox.Show("simpan dibatalkan");
+                MessageBox.Show("Error: " + ex.Message);
             }
+            finally
+            {
+                if (koneksi != null)
+                    koneksi.Close();
+            }
+
+
         }
     }
 }
