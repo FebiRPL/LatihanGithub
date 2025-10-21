@@ -67,7 +67,7 @@ namespace LatihanGithub
             try
             {
                 conn.Open();
-                string query = @"SELECT s.NISN, s.Nama_Siswa, s.Alamat, j.Jurusan 
+                string query = @"SELECT s.Nisn, s.Nama_Siswa, s.Alamat, j.Jurusan 
                                 FROM siswa s 
                                 JOIN jurusan j ON s.Id_Jurusan = j.Id_Jurusan";
                 MySqlDataAdapter da = new MySqlDataAdapter(query, conn);
