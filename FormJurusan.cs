@@ -40,10 +40,15 @@ namespace LatihanGithub
                 koneksi = new MySqlConnection(koneksiString);
                 koneksi.Open();
 
-                string query = @"SELECT j.Id_Jurusan, j.Jurusan, s.NISN, s.Nama_Siswa
-                 FROM jurusan j
-                 LEFT JOIN siswa s ON j.Jurusan = s.Jurusan
-                 ORDER BY j.Id_Jurusan";
+                string query = @"SELECT s.Nisn, s.Nama_Siswa, s.Alamat, j.Jurusan 
+                                FROM siswa s 
+                                JOIN jurusan j ON s.Id_Jurusan = j.Id_Jurusan"; string query = @"SELECT s.Nisn, s.Nama_Siswa, s.Alamat, j.Jurusan 
+                                FROM siswa s 
+                                JOIN jurusan j ON s.Id_Jurusan = j.Id_Jurusan";
+
+                string query = @"SELECT s.Nisn, s.Nama_Siswa, s.Alamat, j.Jurusan 
+                                FROM siswa s 
+                                JOIN jurusan j ON s.Id_Jurusan = j.Id_Jurusan";
 
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query, koneksi);
