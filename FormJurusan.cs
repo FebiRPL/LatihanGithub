@@ -23,9 +23,11 @@ namespace LatihanGithub
             InitializeComponent();
         }
 
+
         private void clear()
         {
             txbKodeJurusan.Clear();
+            txbJurusan.Clear();
             txbJurusan.Focus();
            
 
@@ -38,7 +40,7 @@ namespace LatihanGithub
                 koneksi = new MySqlConnection(koneksiString);
                 koneksi.Open();
 
-                string query = "SELECT * FROM anggota";
+                string query = "SELECT * FROM jurusan";
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query, koneksi);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
@@ -113,7 +115,7 @@ namespace LatihanGithub
 
                 MySqlCommand cmd = new MySqlCommand(query, koneksi);
                 cmd.Parameters.AddWithValue("@id", txbKodeJurusan.Text);
-                cmd.Parameters.AddWithValue("@nama", txbJurusan.Text);
+                cmd.Parameters.AddWithValue("@jurusan", txbJurusan.Text);
                
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Data berhasil disimpan!", "Informasi");
@@ -131,6 +133,38 @@ namespace LatihanGithub
             }
 
 
+        }
+
+        private void btnBatal_Click(object sender, EventArgs e)
+        {
+            if (dgvJurusan.SelectedRows.Count > 0)
+            {
+                string id = dgvJurusan.SelectedRows[0].Cells["Id_Jurusan"].Value.ToString();
+
+                try
+                {
+                    koneksi = new MySqlConnection(koneksiString);
+                    koneksi.Open();
+
+                    String query = "DELETE FROM jurusan WHERE Id_Jurusan=@id";
+                    MySqlCommand cmd = new MySqlCommand(query, koneksi);
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.ExecuteNonQuery();
+
+                    MessageBox.Show("Data berhasil dihapus!", "Informasi");
+                    TampilData();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error:" + ex.Message);
+                }
+                finally
+                {
+                    if (koneksi != null)
+                        koneksi.Close();
+
+                }
+            }
         }
     }
 }

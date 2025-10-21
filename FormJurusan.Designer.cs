@@ -81,6 +81,7 @@
             this.btnBatal.TabIndex = 4;
             this.btnBatal.Text = "Batal";
             this.btnBatal.UseVisualStyleBackColor = true;
+            this.btnBatal.Click += new System.EventHandler(this.btnBatal_Click);
             // 
             // lblKodeJurusan
             // 
@@ -96,7 +97,7 @@
             this.dgvJurusan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvJurusan.Location = new System.Drawing.Point(142, 105);
             this.dgvJurusan.Name = "dgvJurusan";
-            this.dgvJurusan.Size = new System.Drawing.Size(483, 162);
+            this.dgvJurusan.Size = new System.Drawing.Size(251, 152);
             this.dgvJurusan.TabIndex = 6;
             // 
             // FormJurusan
