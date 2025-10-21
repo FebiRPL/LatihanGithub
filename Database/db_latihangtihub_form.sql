@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Okt 2025 pada 09.56
+-- Waktu pembuatan: 21 Okt 2025 pada 09.28
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -40,7 +40,10 @@ CREATE TABLE `jurusan` (
 
 CREATE TABLE `siswa` (
   `Id_Siswa` int(10) NOT NULL,
-  `Nama_Siswa` varchar(700) NOT NULL
+  `Nama_Siswa` varchar(700) NOT NULL,
+  `Nisn` varchar(100) NOT NULL,
+  `Alamat` varchar(100) NOT NULL,
+  `Jurusan` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
