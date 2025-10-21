@@ -41,9 +41,10 @@ namespace LatihanGithub
                 koneksi.Open();
 
                 string query = @"SELECT j.Id_Jurusan, j.Jurusan, s.NISN, s.Nama_Siswa
-                        FROM jurusan j
-                        LEFT JOIN siswa s ON j.Id_Jurusan = s.Id_Jurusan
-                        ORDER BY j.Id_Jurusan";
+                 FROM jurusan j
+                 LEFT JOIN siswa s ON j.Jurusan = s.Jurusan
+                 ORDER BY j.Id_Jurusan";
+
 
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query, koneksi);
                 DataTable dt = new DataTable();
