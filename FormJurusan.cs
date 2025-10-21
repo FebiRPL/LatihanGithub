@@ -40,17 +40,20 @@ namespace LatihanGithub
                 koneksi = new MySqlConnection(koneksiString);
                 koneksi.Open();
 
-                string query = "SELECT * FROM jurusan";
+                string query = @"SELECT j.Id_Jurusan, j.Jurusan, s.NISN, s.Nama_Siswa
+                        FROM jurusan j
+                        LEFT JOIN siswa s ON j.Id_Jurusan = s.Id_Jurusan
+                        ORDER BY j.Id_Jurusan";
+
                 MySqlDataAdapter adapter = new MySqlDataAdapter(query, koneksi);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
-
 
                 dgvJurusan.DataSource = dt;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error:" + ex.Message);
+                MessageBox.Show("Error: " + ex.Message);
             }
             finally
             {
@@ -58,6 +61,7 @@ namespace LatihanGithub
                     koneksi.Close();
             }
         }
+
 
         private void refreshData()
         {
